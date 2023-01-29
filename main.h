@@ -22,5 +22,6 @@ void data(void);
 void render(void);
 void checkBusy(void);
 void sendString(char*);
+void sendStringWithEffect(char*);
 
 #endif

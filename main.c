@@ -12,9 +12,9 @@ int main(void){
 	lcd_send(0x0E, command);
 	_delay_us(50);
 
-	sendString("Hello World!");
+	sendStringWithEffect("Hello World!");
 
-	while(1){
+	while(true){
 
 	}
 
@@ -60,5 +60,12 @@ void command(){
 void sendString(char* string){
 	while(*string > 0){
 		lcd_send(*string++, data);
+	}
+}
+
+void sendStringWithEffect(char* string){
+	while(*string>0){
+		lcd_send(*string++, data);
+		_delay_ms(250);
 	}
 }
