@@ -13,6 +13,7 @@ Schema will be like this<br>
 <br>
 To compile
 <br>
-```avr-gcc -mmcu=atmega32 -Os main.c -o main.bin```<br>
-```avr-objcopy -j .text -j .data -O ihex main.bin main.hex```
-<br>Or use make file
+```make```
+<br>
+To clean:<br>
+```make clean```
