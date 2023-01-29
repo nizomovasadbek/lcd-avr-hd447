@@ -1,4 +1,4 @@
-#include "main.h"
+#include "led.h"
 
 int main(void){
 	LCDControlDirection |= (1 << ReadWrite) | (1 << RSPin) | (1 << Enable);
@@ -12,10 +12,21 @@ int main(void){
 	lcd_send(0x0E, command);
 	_delay_us(50);
 
-	sendStringWithEffect("Hello World!");
+	unsigned char c;
+	char isEnd = 0x00;
+	unsigned int addrCnt = 0x00;
 
 	while(true){
-
+		if(!isEnd){
+			c = eeprom_read_byte((uint8_t*) addrCnt);
+			if(c == 0xff) {
+				isEnd = 0x01;
+				continue;
+			}
+			lcd_send(c, data);
+			_delay_ms(200);
+			addrCnt++;
+		}
 	}
 
 	return 0;

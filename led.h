@@ -1,9 +1,11 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _LCD_H
+#define _LCD_H
 
 #define F_CPU 16000000UL
 #include <avr/io.h>
+#include <avr/eeprom.h>
 #include <util/delay.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 #define LCDControlPort PORTD
