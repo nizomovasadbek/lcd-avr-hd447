@@ -21,5 +21,6 @@ void command(void);
 void data(void);
 void render(void);
 void checkBusy(void);
+void sendString(char*);
 
 #endif

@@ -9,9 +9,16 @@ int main(void){
 	_delay_ms(2);
 	lcd_send(0x38, command);
 	_delay_us(50);
-	lcd_send(0x0F, command);
+	lcd_send(0x0E, command);
 	_delay_us(50);
 
+	sendString("Hello World!");
+
+	while(1){
+
+	}
+
+	return 0;
 }
 
 void checkBusy(){
@@ -48,4 +55,10 @@ void data(){
 
 void command(){
 	LCDControlPort &= ~(1 << RSPin);
+}
+
+void sendString(char* string){
+	while(*string > 0){
+		lcd_send(*string++, data);
+	}
 }
