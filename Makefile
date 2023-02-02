@@ -1,15 +1,13 @@
 DEVICE=atmega32
+SRC=$(wildcard *.c)
+BINS=$(SRC:.c=.o)
 CC=avr-gcc
-BIN=main.bin
-HEX_FILE=main.hex
-CONVERT=avr-objcopy -j .text -j .data -O ihex
+FLAGS=-g -Wall -c -Os
 
-all: $(BIN)
+all: $(BINS)
 
-%.bin: %.c
+%.o: %.c
 	$(CC) -mmcu=$(DEVICE) -Os $^ -o $@
-	$(CONVERT) $@ $(HEX_FILE)
 	
 clean:
-	$(RM) $(BIN)
-	$(RM) $(HEX_FILE)
+	$(RM) $(BINS)

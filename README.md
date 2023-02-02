@@ -1,19 +1,19 @@
-# LCD driver for C avr
+# LCD kichik drayver AVR mikrokontrollerlari uchun!
 
-_B0 pin wires to D0 (LCD) .. and so on_<br>
-*Reset pin wires to D2*<br>
-*Read/Write pin wires to D7*<br>
-*Enable pin wires to D5*<br>
+_B0 LCD dagi D0 ga ulanadi B1 esa D1 ga va hokazo_<br>
+*Reset PIN D2 ga ulanadi*<br>
+*Read/Write pin D7 ga ulanadi*<br>
+*Enable pin D5 ga ulanadi*<br>
 <br>
 <br>
 <br>
-Schema will be like this<br>
+Sxema quyidagicha bo'ladi<br>
 ![Schema](images/schema.png)
 <br>
 <br>
-To compile
+Komplatsiya qilish uchun
 <br>
 ```make```
 <br>
-To clean:<br>
+Tozalash uchun:<br>
 ```make clean```
